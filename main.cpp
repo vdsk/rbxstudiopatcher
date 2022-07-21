@@ -104,7 +104,7 @@ int main(int argc, char* argv[])
             std::vector<unsigned char> buffer(std::istreambuf_iterator<char>(infile), {});
             infile.close();
 
-            DWORD ins = scanIdaStyle("83 CF 04 41 89 7E 64", reinterpret_cast<unsigned char*>(&buffer[0]), buffer.size());
+            DWORD ins = scanIdaStyle("83 CF 04 ?? 89 ?? 64", reinterpret_cast<unsigned char*>(&buffer[0]), buffer.size());
             patchBuffer(ins, "83 CF 05");
 
 
